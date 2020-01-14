@@ -18,13 +18,13 @@ pipeline{
 			// define step to run
 			steps {
 				//invoke command to stop tomcat service
-				bat 'sc stop Tomcat8.5'
+				bat 'sc stop Tomcat8'
 				bat 'ping localhost -n 6'
 				// copy war file from build target to webapp Tomcat folder
 				bat 'xcopy /y C:\\Program Files (x86)\\Jenkins\\workspace\\MyPipeline\\target\\Jenkins.war "C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\webapps"'
 				
 				//invoke command to start tomcat service
-				bat 'sc start Tomcat8.5'
+				bat 'sc start Tomcat8'
 			}
 		}
 	}
