@@ -2,7 +2,7 @@
 public class Details {
 
 	private String information;
-	public static String myName = "Farida";
+	public static final String myName = "Farida";
 
 	public String getInformation() {
 		return information;
