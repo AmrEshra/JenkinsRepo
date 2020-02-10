@@ -6,11 +6,11 @@ public class DetailsTest {
 
 	@Test
 	public void testMyName() {
-		assertEquals("Farida", Details.getMyName());
+		assertEquals("Farida", Details.myName);
 	}
 	
 	@Test
 	public void testYourName() {
-		assertEquals("Farida", Details.getMyName());
+		assertEquals("Farida", Details.myName);
 	}
 }
