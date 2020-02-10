@@ -2,7 +2,6 @@
 public class Details {
 
 	private String information;
-	public static final String myName = "Farida";
 
 	public String getInformation() {
 		return information;
@@ -15,4 +14,9 @@ public class Details {
 	public Details(String information) {
 		this.information = information;
 	}
+	
+    public static String getMyName() {
+        return "Amr";
+    }
+	
 }
