@@ -1,3 +1,4 @@
+<!DOCTYPE>
 <html>
 <body>
 	<h2>Hello World! Maven Web Project Example.</h2>
