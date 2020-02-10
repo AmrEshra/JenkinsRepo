@@ -16,7 +16,10 @@ public class Details {
 	}
 	
     public static String getMyName() {
-        return "Farida";
+    	if(true)
+    		return "Farida";
+    	else
+    		return "Farida";
     }
 	
 }
