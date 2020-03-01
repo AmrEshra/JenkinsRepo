@@ -20,10 +20,15 @@ pipeline{
 			//    bat "${scannerHome}/bin/sonar-scanner.bat"
 			//}
 
-			script {
-		        scannerHome = tool 'SonarQubeScanner'
-		    }
+		//	environment {
+		//        scannerHome = tool 'SonarQubeScanner'
+		//    }
 		    steps {
+		    
+		    	script {
+		          // requires SonarQube Scanner 2.8+
+		          scannerHome = tool 'SonarQubeScanner'
+		        }
 		        withSonarQubeEnv('SonarQube Scanner') { 
 		            bat '${scannerHome}/bin/sonar-scanner.bat'
 		      	}
