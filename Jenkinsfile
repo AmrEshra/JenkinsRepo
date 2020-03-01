@@ -13,6 +13,17 @@ pipeline{
 			}
 		}
 		
+		stage('SonarQube') {
+		      tools {
+		        sonarQube 'SonarQube Scanner 4.2'
+		      }
+		      steps {
+		        withSonarQubeEnv('SonarQube Scanner') {
+		          sh 'sonar-scanner'
+		        }
+		      }
+		    }
+		
 		// start of deploy state
 		//stage('deploy') {
 			// define step to run
