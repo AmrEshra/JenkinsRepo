@@ -20,14 +20,14 @@ pipeline{
 			//    bat "${scannerHome}/bin/sonar-scanner.bat"
 			//}
 
-			environment {
-		        scannerHome = tool 'SonarQubeScanner'
-		    }
-		    steps {
-		        withSonarQubeEnv('SonarQube') { 
-		            bat '${scannerHome}/bin/sonar-scanner.bat'
-		      	}
-		    }
+			//environment {
+		   //     scannerHome = tool 'SonarQubeScanner'
+		   // }
+		   // steps {
+		   //     withSonarQubeEnv('SonarQube') { 
+		   //         bat '${scannerHome}/bin/sonar-scanner.bat'
+		   //   	}
+		   // }
 		 }
 		
 		// start of deploy state
