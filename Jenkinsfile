@@ -25,7 +25,7 @@ pipeline{
 		    }
 		    steps {
 		        withSonarQubeEnv('SonarQube') {
-		            bat 'E:/Sources/sonar-scanner-4.2/bin/sonar-scanner.bat'
+		           // bat 'E:/Sources/sonar-scanner-4.2/bin/sonar-scanner.bat'
 		      	}
 		    }
 		 }
