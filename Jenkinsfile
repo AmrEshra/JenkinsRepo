@@ -20,7 +20,8 @@ pipeline{
 		    }
 		    steps {
 		        withSonarQubeEnv('SonarQube') { 
-		            bat '${scannerHome}/bin/sonar-scanner.bat'
+		           // bat '${scannerHome}/bin/sonar-scanner.bat'
+		           bat 'sonar:sonar'
 		      	}
 		    }
 		 }
