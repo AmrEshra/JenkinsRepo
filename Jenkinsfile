@@ -14,12 +14,20 @@ pipeline{
 		}
 		
 		stage('SonarQube') {
-			steps {
-	          script {
-	              def sonarScanner = tool name: 'SonarQubeScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
-	              bat "${sonarScanner}/bin/sonar-scanner -e -Dsonar.host.url=xxx"
-	        	}
-        	 }
+		
+			def scannerHome = tool 'SonarQubeScanner';
+			withSonarQubeEnv('SonarQube'){
+			    bat "${scannerHome}/bin/sonar-scanner.bat"
+			}
+
+			//environment {
+		    //    scannerHome = tool 'SonarQubeScanner'
+		    //}
+		   // steps {
+		    //    withSonarQubeEnv('SonarQube') {
+		   //         bat '${scannerHome}/bin/sonar-scanner.bat'
+		   //     }
+		 //   }
 		 }
 		
 		// start of deploy state
