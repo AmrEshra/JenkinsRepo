@@ -14,15 +14,18 @@ pipeline{
 		}
 		
 		stage('SonarQube') {
-		      tools {
-		        sonarQube 'SonarQube Scanner 4.2'
-		      }
-		      steps {
-		        withSonarQubeEnv('SonarQube Scanner') {
-		          sh 'sonar-scanner'
-		        }
-		      }
+		environment {
+		        scannerHome = tool 'SonarQubeScanner'
 		    }
+		    steps {
+		        withSonarQubeEnv('SonarQube') {
+		            sh "${scannerHome}/bin/sonar-scanner"
+		        }
+		        timeout(time: 10, unit: 'MINUTES') {
+		            waitForQualityGate abortPipeline: true
+		        }
+		    }
+		 }
 		
 		// start of deploy state
 		//stage('deploy') {
