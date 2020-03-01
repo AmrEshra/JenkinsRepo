@@ -15,19 +15,19 @@ pipeline{
 		
 		stage('SonarQube') {
 		
-			def scannerHome = tool 'SonarQubeScanner';
-			withSonarQubeEnv('SonarQube'){
-			    bat "${scannerHome}/bin/sonar-scanner.bat"
-			}
+			//def scannerHome = tool 'SonarQubeScanner';
+			//withSonarQubeEnv('SonarQube'){
+			//    bat "${scannerHome}/bin/sonar-scanner.bat"
+			//}
 
-			//environment {
-		    //    scannerHome = tool 'SonarQubeScanner'
-		    //}
-		   // steps {
-		    //    withSonarQubeEnv('SonarQube') {
-		   //         bat '${scannerHome}/bin/sonar-scanner.bat'
-		   //     }
-		 //   }
+			environment {
+		        scannerHome = tool 'SonarQubeScanner'
+		    }
+		    steps {
+		        withSonarQubeEnv('SonarQube') {
+		            bat '${scannerHome}/bin/sonar-scanner.bat'
+		      	}
+		    }
 		 }
 		
 		// start of deploy state
