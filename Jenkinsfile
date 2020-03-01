@@ -23,11 +23,11 @@ pipeline{
 			//environment {
 		   //     scannerHome = tool 'SonarQubeScanner'
 		   // }
-		   // steps {
+		    steps {
 		   //     withSonarQubeEnv('SonarQube') { 
 		   //         bat '${scannerHome}/bin/sonar-scanner.bat'
 		   //   	}
-		   // }
+		    }
 		 }
 		
 		// start of deploy state
