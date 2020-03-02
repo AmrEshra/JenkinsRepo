@@ -21,7 +21,7 @@ pipeline{
 		    steps {
 		        withSonarQubeEnv('SonarQube') { 
 		          // bat '${scannerHome}/bin/sonar-scanner.bat'
-		          bat 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.1.1:sonar' 
+		          bat 'mvn clean package sonar:sonar' 
 		      	}
 		    }
 		 }
