@@ -17,7 +17,8 @@ public class SimpleServlet extends HttpServlet {
       try {
       resp.getWriter().write("Hello World! Maven Web Project Example.");
       } catch (IOException e){
-
+    	  e.printStackTrace();
+    	  throw e;
       }
    }
 }
