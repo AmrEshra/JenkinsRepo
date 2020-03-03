@@ -1,3 +1,5 @@
+package dal;
+
 
 public class Details {
 
