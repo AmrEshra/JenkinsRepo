@@ -20,8 +20,7 @@ pipeline{
 		    }
 		    steps {
 		        withSonarQubeEnv('SonarQube') { 
-		        println "${scannerHome}/bin/sonar-scanner.bat"
-		            bat "${scannerHome}/bin/sonar-scanner.bat"
+		           bat '${scannerHome}/bin/sonar-scanner.bat'
 		          // bat 'mvn clean package sonar:sonar' 
 		      	}
 		    }
