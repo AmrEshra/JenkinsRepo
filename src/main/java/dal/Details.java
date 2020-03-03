@@ -18,7 +18,8 @@ public class Details {
 	}
 	
     public static String getMyName() {
-        return "Amr";
+    	String name = "Amr";
+        return name;
     }
 	
 }
