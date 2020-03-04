@@ -9,7 +9,9 @@ pipeline{
 			// start of running steps inside one stage
 			steps{
 				// invoke command to build with maven
+				slackSend channel: '#build', message: 'Starting Building Pipeline!'
 				bat 'mvn clean install'
+				slackSend channel: '#build', message: 'Finished Building Pipeline!'
 			}
 		}
 		
