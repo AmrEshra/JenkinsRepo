@@ -25,6 +25,10 @@ pipeline{
 		      	}
 		    }
 		 }
+		 
+		stage("speak") {
+			slackSend channel: 'Hello from Pipeline!', message: '#build'
+		}
 		
 		// start of deploy state
 		//stage('deploy') {
@@ -41,4 +45,5 @@ pipeline{
 		//	}
 		//}
 	}
+	
 }
