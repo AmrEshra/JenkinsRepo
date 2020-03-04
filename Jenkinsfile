@@ -25,7 +25,7 @@ pipeline{
 		    }
 		 }*/
 		 
-		stage("speak") {
+		stage('speak') {
 			slackSend channel: 'Hello from Pipeline!', message: '#build'
 		}
 		
