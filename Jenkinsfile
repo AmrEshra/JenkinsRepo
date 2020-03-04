@@ -13,7 +13,7 @@ pipeline{
 			}
 		}
 		
-		stage('SonarQube') {
+		/*stage('SonarQube') {
 		
 			environment {
 		        scannerHome = tool 'SonarQubeScanner'
@@ -21,10 +21,9 @@ pipeline{
 		    steps {
 		        withSonarQubeEnv('SonarQube') { 
 		           bat "${scannerHome}/bin/sonar-scanner.bat"
-		          // bat 'mvn clean package sonar:sonar' 
 		      	}
 		    }
-		 }
+		 }*/
 		 
 		stage("speak") {
 			slackSend channel: 'Hello from Pipeline!', message: '#build'
