@@ -26,7 +26,9 @@ pipeline{
 		 }*/
 		 
 		stage('speak') {
-			slackSend channel: 'Hello from Pipeline!', message: '#build'
+			steps {
+				slackSend channel: 'Hello from Pipeline!', message: '#build'
+			}
 		}
 		
 		// start of deploy state
