@@ -24,15 +24,10 @@ pipeline{
 		        withSonarQubeEnv('SonarQube') { 
 		           bat "${scannerHome}/bin/sonar-scanner.bat"
 		      	}
+		      	slackSend channel: '#build', message: 'SonarQube Analysis finished'
 		    }
 		 }*/
-		 
-		stage('speak') {
-			steps {
-				slackSend channel: '#build', message: 'Hello from Pipeline!'
-			}
-		}
-		
+		 		
 		// start of deploy state
 		//stage('deploy') {
 			// define step to run
