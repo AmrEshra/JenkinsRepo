@@ -15,7 +15,7 @@ pipeline{
 			}
 		}
 		
-		/*stage('SonarQube') {
+		stage('SonarQube') {
 		
 			environment {
 		        scannerHome = tool 'SonarQubeScanner'
@@ -26,7 +26,7 @@ pipeline{
 		      	}
 		      	slackSend channel: '#build', message: 'SonarQube Analysis finished'
 		    }
-		 }*/
+		 }
 		 		
 		// start of deploy state
 		//stage('deploy') {
